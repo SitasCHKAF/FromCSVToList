@@ -1,15 +1,17 @@
 public class Division {
     int ID;
     String name;
-    Division(String name)
+    Division(int ID,String name)
     {
         this.name=name;
-        ID=getUniqueId();
+        this.ID=ID;
     }
 
-    static int identificationFactory=0;
-    static int getUniqueId()
-    {
-        return ++identificationFactory;
+    @Override
+    public String toString() {
+        return "{" +
+                "ID=" + ID +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

@@ -1,10 +1,9 @@
 import java.time.LocalDate;
-import java.util.Calendar;
 
 public class Human {
     enum Sex{
-        male,
-        female;
+        Male,
+        Female
     }
     int ID;
     String name;
@@ -13,9 +12,9 @@ public class Human {
     int salary;
     LocalDate birthday;
 
-    public Human(String name,String sex,Division Div,int salary,int year,int month,int day)
+    public Human(int ID,String name,String sex,Division Div,int salary,int year,int month,int day)
     {
-        ID=getUniqueId();
+        this.ID=ID;
         this.name=name;
         this.division=Div;
         this.sex= Sex.valueOf(sex);
@@ -29,16 +28,10 @@ public class Human {
                 "ID=" + ID +
                 ", name='" + name + '\'' +
                 ", sex=" + sex.toString() +
-                ", division=" + division.name +
+                ", division=" + division +
                 ", salary=" + salary +
                 ", birthday=" + birthday.toString() +
                 '}';
-    }
-
-    static int identificationFactory=0;
-    static int getUniqueId()
-    {
-        return ++identificationFactory;
     }
 
 }
